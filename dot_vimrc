@@ -1,0 +1,44 @@
+" VIM Configuration - Lemaire Vincent
+" To find info vim 4 human...
+" Some options alrdy set by the base env
+" See /etc/vimrc for base settings
+
+" -- VIM not VI
+set nocompatible 
+
+" -- Display
+set title       " terminal title
+"set number      " line number
+set ruler       " cursor 
+set wrap        " line too long on multiple lines
+set scrolloff=3 " 3 lines around cursor when scrolling
+set showcmd     " useful info printed
+set showmode    " useful info printed
+
+" -- Research
+set ignorecase  " Caps ignored
+set smartcase   " if explicite caps, research takes into account case
+set incsearch   " highlights searching results when writing the cmd
+set hlsearch    " highlights searching results
+
+" -- Beep rm
+set visualbell
+set noerrorbells
+
+" -- Misc.
+set backspace=indent,eol,start " backspace formatting 
+set hidden                     " hide files when opening other files
+
+" -- Tabs as space
+set tabstop=2
+set shiftwidth=2
+set expandtab
+
+" -- Syntax color & indentation
+syntax enable
+
+filetype on
+filetype plugin on
+filetype indent on
+
+colorscheme default 
