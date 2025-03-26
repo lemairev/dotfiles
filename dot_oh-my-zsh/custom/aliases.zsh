@@ -76,15 +76,6 @@ function dc-fn {
   docker compose $*
 }
 
-function drmc-fn {
-  docker rm $(docker ps --all -q -f status=exited)
-}
-
-function drmid-fn {
-  imgs=$(docker images -q -f dangling=true)
-  [ ! -z "$imgs" ] && docker rmi "$imgs" || echo "no dangling images."
-}
-
 alias dc='dc-fn'     # docker-compose
 alias di='di-fn'     # docker inspect <container>
 alias dl='dl-fn'     # docker logs <container>
@@ -93,8 +84,8 @@ alias dsr='dsr-fn'   # docker stop / rm <container>
 alias drun='drun-fn' # docker run <image>
 
 # rm docker & images
-alias drm='drmc-fn'   # rm all exited container
-alias drmi='drmid-fn' # rm all interm images
+alias drm='docker container prune -f' # rm all stopped container
+alias drmi='docker image prune -f'    # rm all dangling images
 
 # see docker container/images
 dps_format='{{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}\t{{.RunningFor}}' #{{.CreatedAt}}\t{{.Ports}}'
