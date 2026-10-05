@@ -26,6 +26,7 @@ alias r='R'
 
 # mac related
 # show/hide hidden files in finder
+alias tarm='tar --disable-copyfile'
 alias hidef_show='defaults write com.apple.finder AppleShowAllFiles TRUE  ; killall Finder'
 alias hidef_hide='defaults write com.apple.finder AppleShowAllFiles FALSE ; killall Finder'
 # open stuff from terminal
@@ -91,7 +92,7 @@ alias drmi='docker image prune -f'    # rm all dangling images
 dps_format='{{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}\t{{.RunningFor}}' #{{.CreatedAt}}\t{{.Ports}}'
 alias dps="docker ps --format 'table ${dps_format}'" # list container running
 alias dpsa="dps -a"                                  # list all container
-alias dim="docker images"                            # list docker images
+alias dim="docker image ls --format table"
 
 # git
 alias ga="git add"                          # add file

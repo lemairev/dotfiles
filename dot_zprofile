@@ -1,0 +1,5 @@
+# The following lines were added by Docker Desktop to add commands to your PATH.
+export PATH="$PATH:/Users/vincent/.docker/bin"
+export PATH="$PATH:/Users/vincent/.local/bin"
+export ZSH_COMPDUMP="$ZSH/cache/.zcompdump"
+
